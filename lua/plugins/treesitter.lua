@@ -1,5 +1,8 @@
 local gh = require("config.utils").gh
+
 vim.pack.add({ { src = gh("nvim-treesitter/nvim-treesitter"), version = "main" } })
+vim.pack.add({ gh("nvim-treesitter/nvim-treesitter-context") })
+
 vim.env.CC = "gcc"
 
 -- Ensure basic parsers are installed
@@ -20,6 +23,16 @@ local parsers = {
 	"javascript",
 }
 require("nvim-treesitter").install(parsers)
+
+require("treesitter-context").setup({
+	enable = true,
+	max_lines = 4,
+	min_window_height = 15,
+	line_numbers = true,
+	multiline_threshold = 20,
+	trim_scope = 'outer',
+	mode = 'cursor',
+})
 
 ---@param buf integer
 ---@param language string

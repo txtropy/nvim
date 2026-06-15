@@ -20,13 +20,18 @@ require("gitsigns").setup({
 vim.pack.add({ gh("NMAC427/guess-indent.nvim") })
 require("guess-indent").setup({})
 
+-- colorschemes
 vim.pack.add({ gh("folke/tokyonight.nvim") })
 require("tokyonight").setup({
 	styles = {
 		comments = { italic = false },
 	},
 })
-vim.cmd.colorscheme("tokyonight-storm")
+
+vim.pack.add({ gh("rebelot/kanagawa.nvim") })
+require("kanagawa").setup()
+
+vim.pack.add({ gh("AlexvZyl/nordic.nvim") })
 
 vim.pack.add({ gh("folke/todo-comments.nvim") })
 require("todo-comments").setup({ signs = false })
@@ -35,4 +40,13 @@ vim.pack.add({
 	gh("nvim-tree/nvim-web-devicons"),
 	gh("nvim-lualine/lualine.nvim"),
 })
-require("lualine").setup({ options = { theme = "tokyonight" } })
+
+vim.pack.add({ gh("lukas-reineke/indent-blankline.nvim") })
+require("ibl").setup({})
+
+vim.pack.add({ gh("sphamba/smear-cursor.nvim") })
+require("smear_cursor").setup({})
+
+-- default colorscheme
+vim.cmd.colorscheme("nordic")
+require("lualine").setup({ options = { theme = "nordic" } })

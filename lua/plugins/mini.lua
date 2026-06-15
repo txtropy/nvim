@@ -18,3 +18,43 @@ require("mini.ai").setup({
 })
 
 require("mini.surround").setup()
+
+require("mini.indentscope").setup({
+	draw = {
+		delay = 50,
+	},
+	options = {
+		try_as_border = true,
+	},
+	symbol = "│",
+})
+
+-- dashboard/startup page
+local starter = require("mini.starter")
+starter.setup({
+	header = table.concat({
+		"                                                     ",
+		"  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
+		"  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
+		"  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
+		"  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+		"  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+		"  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+		"                                                     ",
+	}, "\n"),
+	items = {
+		starter.sections.recent_files(5, false, true),
+		{ name = "New File", action = "ene | startinsert", section = "Actions" },
+		{ name = "Quit Neovim", action = "qa", section = "Actions" },
+	},
+	content_hooks = {
+		starter.gen_hook.adding_bullet("    "),
+		starter.gen_hook.indexing("all", {}),
+		starter.gen_hook.aligning("center", "center"),
+	},
+	footer = function()
+		local elapsed = (vim.uv.hrtime() - (vim.g._start_time or vim.uv.hrtime())) / 1e6
+		return ("⚡ Loaded in %.2fms"):format(elapsed)
+	end,
+	evaluate_single = true,
+})

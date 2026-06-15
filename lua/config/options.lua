@@ -36,8 +36,8 @@ opt.cursorline = true
 opt.scrolloff = 10
 opt.confirm = true
 
--- Global indentation defaults
-opt.expandtab = true -- Convert tabs to spaces
-opt.shiftwidth = 4 -- Number of spaces for an indent step
-opt.tabstop = 4 -- Number of spaces that a <Tab> counts for
-opt.softtabstop = 4 -- Number of spaces that a <Tab> counts for while editing
+-- indentation defaults
+opt.expandtab = true -- convert tabs to spaces
+opt.shiftwidth = 4 -- number of spaces for an indent step
+opt.tabstop = 4 -- number of spaces that a <Tab> counts for
+opt.softtabstop = 4 -- number of spaces that a <Tab> counts for while editing

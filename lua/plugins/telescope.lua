@@ -71,3 +71,7 @@ vim.keymap.set("n", "<leader>sn", function()
 	builtin.find_files({ cwd = vim.fn.stdpath("config"), follow = true })
 end, { desc = "[S]earch [N]eovim files" })
 
+-- theme switching with telescope
+vim.keymap.set("n", "<leader>th", function()
+	builtin.colorscheme({ enable_preview = true })
+end, { desc = "[Th]eme picker" })
