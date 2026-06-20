@@ -28,10 +28,9 @@ require("tokyonight").setup({
 	},
 })
 
-vim.pack.add({ gh("rebelot/kanagawa.nvim") })
-require("kanagawa").setup()
-
-vim.pack.add({ gh("AlexvZyl/nordic.nvim") })
+vim.pack.add({ gh("navarasu/onedark.nvim") })
+require("onedark").setup({ style = "darker" })
+require("onedark").load()
 
 vim.pack.add({ gh("folke/todo-comments.nvim") })
 require("todo-comments").setup({ signs = false })
@@ -48,5 +47,5 @@ vim.pack.add({ gh("sphamba/smear-cursor.nvim") })
 require("smear_cursor").setup({})
 
 -- default colorscheme
-vim.cmd.colorscheme("nordic")
-require("lualine").setup({ options = { theme = "nordic" } })
+vim.cmd.colorscheme("onedark")
+require("lualine").setup({ options = { theme = "onedark" } })
