@@ -6,7 +6,7 @@ vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 
 if vim.g.vscode then
-	require("vscode.init")
+	require("config.vscode")
 	return
 end
 

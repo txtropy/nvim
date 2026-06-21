@@ -6,17 +6,6 @@ require("which-key").setup({
 	icons = { mappings = vim.g.have_nerd_font },
 })
 
-vim.pack.add({ gh("lewis6991/gitsigns.nvim") })
-require("gitsigns").setup({
-	signs = {
-		add = { text = "+" },
-		change = { text = "~" },
-		delete = { text = "_" },
-		topdelete = { text = "‾" },
-		changedelete = { text = "~" },
-	},
-})
-
 vim.pack.add({ gh("NMAC427/guess-indent.nvim") })
 require("guess-indent").setup({})
 
