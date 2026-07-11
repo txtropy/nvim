@@ -10,6 +10,7 @@ end
 -- editor actions delegated to VSCode
 map("n", "gd", action("editor.action.revealDefinition"), { desc = "Go to definition" })
 map("n", "gr", action("editor.action.goToReferences"), { desc = "Go to references" })
+map("n", "gi", action("editor.action.goToImplementation"), { desc = "Go to implementation" })
 map("n", "K", action("editor.action.showHover"), { desc = "Show hover" })
 map("n", "<leader>ca", action("editor.action.quickFix"), { desc = "Code action" })
 map("n", "<leader>rn", action("editor.action.rename"), { desc = "Rename symbol" })

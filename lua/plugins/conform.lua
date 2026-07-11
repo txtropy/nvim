@@ -17,9 +17,10 @@ require("conform").setup({
 	formatters_by_ft = {
 		-- python = { "isort", "black" },
 		javascript = { "prettierd", "prettier", stop_after_first = true },
+		json = { "jq" },
 	},
 })
 
 vim.keymap.set({ "n", "v" }, "<leader>f", function()
-	require("conform").format({ async = true })
+	require("conform").format({ async = true, lsp_format = 'fallback' })
 end, { desc = "[F]ormat buffer" })

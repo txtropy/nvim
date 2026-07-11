@@ -21,6 +21,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- See `:help lsp-config` for information about keys and how to configure
 ---@type table<string, vim.lsp.Config>
 local servers = {
+	jq = {},
+	prettier = {},
 	pyright = {},
 	stylua = {},
 	roslyn_ls = {},

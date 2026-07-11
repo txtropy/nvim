@@ -21,6 +21,7 @@ local parsers = {
 	"c_sharp",
 	"typescript",
 	"javascript",
+	"json",
 }
 require("nvim-treesitter").install(parsers)
 
@@ -30,8 +31,8 @@ require("treesitter-context").setup({
 	min_window_height = 15,
 	line_numbers = true,
 	multiline_threshold = 20,
-	trim_scope = 'outer',
-	mode = 'cursor',
+	trim_scope = "outer",
+	mode = "cursor",
 })
 
 ---@param buf integer
