@@ -2,7 +2,6 @@ local gh = require("config.utils").gh
 
 vim.pack.add({ gh("j-hui/fidget.nvim") })
 require("fidget").setup({})
-
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 	callback = function(event)
@@ -21,11 +20,24 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- See `:help lsp-config` for information about keys and how to configure
 ---@type table<string, vim.lsp.Config>
 local servers = {
+	-- lsp
+	roslyn_ls = {},
+	pyright = {},
+	tsgo = {},
+	-- ts_ls = {},
+	-- vtsls = {},
+	html = {},
+	cssls = {},
+	tailwindcss = {},
+	jsonls = {},
+
+	-- formatters
 	jq = {},
 	prettier = {},
-	pyright = {},
 	stylua = {},
-	roslyn_ls = {},
+
+	-- linters
+	biome = {},
 
 	-- Special Lua Config, as recommended by neovim help docs
 	lua_ls = {

@@ -11,6 +11,8 @@ local parsers = {
 	"c",
 	"diff",
 	"html",
+	"css",
+	"scss",
 	"lua",
 	"luadoc",
 	"markdown",
@@ -20,6 +22,7 @@ local parsers = {
 	"vimdoc",
 	"c_sharp",
 	"typescript",
+	"tsx",
 	"javascript",
 	"json",
 }
