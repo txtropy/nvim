@@ -17,6 +17,8 @@ map("n", "<leader>rn", action("editor.action.rename"), { desc = "Rename symbol" 
 map("n", "[d", action("editor.action.marker.prev"), { desc = "Prev diagnostic" })
 map("n", "]d", action("editor.action.marker.next"), { desc = "Next diagnostic" })
 map("n", "<leader>b", action("editor.debug.action.toggleBreakpoint"), { desc = "Toggle breakpoint" })
+map("n", "<leader>f", action("editor.action.formatDocument"), { desc = "Format document" })
+map("v", "<leader>f", action("editor.action.formatSelection"), { desc = "Format selection" })
 
 -- workbench
 map("n", "<leader>e", action("workbench.action.toggleSidebarVisibility"), { desc = "Toggle sidebar" })
@@ -33,3 +35,4 @@ map("v", "K", ":m '<-2<CR>gv=gv", { desc = "[M]ove selected lines up" })
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
